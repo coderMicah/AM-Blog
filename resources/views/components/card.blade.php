@@ -13,13 +13,13 @@
                 <small class="my-2.5 text-xs font-bold uppercase tracking-widest">Featured</small>
                 @endif
                 <h2 class="my-2.5 text-xl/snug font-semibold">{{$post->title}}</h2>
-                <a href="/authors/{{$post->author->slug}}" class="my-2.5 text-xs/snug hover:underline block">{{$post->author->name}}</a>
+                <a href="/author/{{$post->author->slug}}" class="my-2.5 text-xs/snug hover:underline block">{{$post->author->name}}</a>
 
                @if (!$featured)
                <div class="flex flex-wrap gap-x-2 gap-y-1.5">
 
                    @foreach ($post->tags as $tag)   
-                   <a href="/tags/{{$tag->slug}}" class=" rounded-3xl text-xs/relaxed px-3 py-0.5 pb-1 border border-white text-white hover:bg-white hover:text-black transition-colors duration-150">{{$tag->name}}</a>
+                   <a href="/tag/{{$tag->slug}}" class=" rounded-3xl text-xs/relaxed px-3 py-0.5 pb-1 border border-white text-white hover:bg-white hover:text-black transition-colors duration-150">{{$tag->name}}</a>
                    @endforeach
                </div>
                @endif

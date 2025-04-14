@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\User;
@@ -16,3 +17,9 @@ Route::get('/', function () {
 
 Route::get('/authors',[AuthorController::class, 'index']);
 Route::get('/author/{slug}',[AuthorController::class, 'show']);
+
+Route::controller(TagController::class)->group(function(){
+    Route::get('/tags', 'index')->name('tags.index');
+    Route::get('/tag/{slug}', 'show')->name('tags.show');
+});
+

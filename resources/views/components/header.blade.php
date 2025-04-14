@@ -1,6 +1,14 @@
 <header>
     <nav class="flex justify-between items-center py-8">
-        <a href="/">AM Blog</a>
+       <div class="flex items-center space-x-10">
+        <a href="/" class="text-4xl font-garamond italic font-bold">AM Blog</a>
+
+        <div class="hidden space-x-6 lg:block">
+            <x-nav-link href="/posts" :active="request()->is('posts')">Posts</x-nav-link>
+            <x-nav-link href="/tags" :active="request()->is('tags')">Tags</x-nav-link>
+            <x-nav-link href="/authors" :active="request()->is('authors')">Authors</x-nav-link>
+        </div>
+       </div>
 
         <div class="block lg:hidden">
             <button>
